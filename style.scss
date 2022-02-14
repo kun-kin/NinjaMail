@@ -1,0 +1,831 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import "_mixing.scss";
+body {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 70px;
+}
+
+.header-main {
+    max-width: 85%;
+    margin: 0 auto;
+    padding: 28px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // background: red;
+    @include breackpoint(desktop) {
+        max-width: 100%;
+        padding: 28px 16px;
+    }
+    .logo-item {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: Raleway;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 35px;
+        line-height: 41px;
+        color: #000000;
+        text-decoration: none;
+        margin-left: 100px;
+        @include breackpoint(desktop) {
+            font-size: 22px;
+            line-height: 26px;
+        }
+        .logo-img {
+            position: absolute;
+            right: 50%;
+            bottom: 0;
+            transform: translate(-50%, 25%);
+            @include breackpoint(desktop) {
+                transform: translate(-22%, 35%);
+            }
+        }
+    }
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .menu {
+            margin-right: 24px;
+            display: flex;
+            @include breackpoint(changeitem1) {
+                display: none;
+            }
+            .menu-item {
+                list-style: none;
+                padding: 10px 6px;
+                .menu-link {
+                    position: relative;
+                    font-family: Raleway;
+                    font-style: normal;
+                    font-weight: 800;
+                    font-size: 17px;
+                    line-height: 20px;
+                    letter-spacing: 1.275px;
+                    color: #000000;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    padding: 10px 15px;
+                    @include breackpoint(desktop) {
+                        font-size: 11px;
+                        line-height: 13px;
+                    }
+                    &:hover {
+                        box-shadow: -11px 11px 10px -9px #333333;
+                    }
+                    &:hover::after {
+                        background-color: goldenrod;
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 5px;
+                        background: #4BA87D;
+                        left: 50%;
+                        bottom: 0;
+                        transform: translate(-50%, 0);
+                    }
+                }
+            }
+        }
+        .signup-btn {
+            background: #4BA87D;
+            padding: 10px 20px;
+            font-family: Raleway;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 17px;
+            line-height: 20px;
+            text-align: center;
+            letter-spacing: 1.275px;
+            color: #FFFFFF;
+            border: none;
+            text-transform: uppercase;
+            cursor: pointer;
+            @include breackpoint(desktop) {
+                padding: 10px 13.5px;
+                font-size: 11px;
+                line-height: 13px;
+            }
+        }
+    }
+}
+
+.review {
+    max-width: 75%;
+    height: 100%;
+    margin: 0 auto 90px;
+    position: relative;
+    background: url(./images/mainimage.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    padding: 35px 0;
+    @include breackpoint(desktop) {
+        max-width: 90%;
+    }
+    .review-content {
+        margin-left: 15px;
+        h1 {
+            font-family: Playfair Display;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 59px;
+            line-height: 71px;
+            color: #000000;
+            margin-bottom: 23px;
+            animation: backInLeft;
+            /* referring directly to the animation's @keyframe declaration */
+            animation-duration: 1.25s;
+            /* don't forget to set a duration! */
+            pre {
+                display: block;
+                font-family: Playfair Display;
+                white-space: pre-line;
+            }
+            @include breackpoint(tablet) {
+                font-size: 38px;
+                line-height: 64px;
+            }
+        }
+        h3 {
+            font-family: Raleway;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 19px;
+            line-height: 26px;
+            color: #000000;
+            margin-bottom: 35px;
+            max-width: 45%;
+            @include breackpoint(tablet) {
+                font-size: 12px;
+                line-height: 16px;
+            }
+        }
+        .tryagain {
+            background: #4BA87D;
+            padding: 16px 47px;
+            font-family: Raleway;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 21px;
+            line-height: 25px;
+            text-align: center;
+            letter-spacing: 1.05px;
+            color: #FFFFFF;
+            border: 3px solid #4BA87D;
+            cursor: pointer;
+            text-transform: uppercase;
+            &:hover {
+                background: rgb(255, 255, 255);
+                color: #4BA87D;
+            }
+            @include breackpoint(tablet) {
+                padding: 10px 31px;
+                font-size: 13px;
+                line-height: 15px;
+                letter-spacing: 0.63px;
+            }
+        }
+        .getdemo {
+            background: #FFFFFF;
+            padding: 16px 47px;
+            border: 3px solid #4BA87D;
+            box-sizing: border-box;
+            font-family: Raleway;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 21px;
+            line-height: 25px;
+            text-align: center;
+            letter-spacing: 2.1px;
+            color: #4BA87D;
+            cursor: pointer;
+            margin-left: 35px;
+            text-transform: uppercase;
+            &:hover {
+                background: #4BA87D;
+                color: #ffffff;
+            }
+            @include breackpoint(tablet) {
+                padding: 10px 31px;
+                font-size: 13px;
+                line-height: 15px;
+                letter-spacing: 1.5px;
+            }
+        }
+    }
+}
+
+.video {
+    // background: url(./images/slashblack.png);
+    // background-position: left;
+    // background-repeat: no-repeat;
+    background-color: #e7e7e7;
+}
+
+.video-main {
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 70px 0;
+    position: relative;
+    z-index: 2;
+    @include breackpoint(desktop) {
+        max-width: 80%;
+    }
+    .video-bg {
+        video {
+            width: 100%;
+            height: 100%;
+            box-shadow: 0px 0px 4px 1px #898585;
+        }
+    }
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        // background: rgba(0, 0, 0, 0.5);
+        pointer-events: none;
+    }
+    .video-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        h1 {
+            font-family: Playfair Display;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 60px;
+            line-height: 80px;
+            color: #FFFFFF;
+            margin-bottom: 60px;
+            @include breackpoint(desktop) {
+                font-size: 38px;
+                line-height: 51px;
+            }
+        }
+        .video-button {
+            background: #FFFFFF;
+            padding: 19px 32px;
+            font-family: Raleway;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 21px;
+            line-height: 25px;
+            text-align: center;
+            letter-spacing: 1.05px;
+            color: #4BA87D;
+            border: none;
+            margin: 0 auto;
+            text-transform: uppercase;
+            cursor: pointer;
+            @include breackpoint(desktop) {
+                font-size: 13px;
+                line-height: 15px;
+                letter-spacing: 0.65px;
+                padding: 12px 24px;
+            }
+            &:hover {
+                background-color: #4BA87D;
+                color: white;
+            }
+        }
+    }
+}
+
+
+/* end video */
+
+
+/* skew */
+
+.skew {
+    width: 100%;
+    height: 700px;
+    position: relative;
+    z-index: 1;
+    @include breackpoint(desktop) {
+        height: 625px;
+    }
+    &::after {
+        content: '';
+        width: 100%;
+        height: 850px;
+        position: absolute;
+        top: -25%;
+        left: 0;
+        background: #CAEAC7;
+        transform: skewY(-9deg);
+        @include breackpoint(desktop) {
+            height: 765px;
+        }
+    }
+    .skew-main {
+        position: relative;
+        z-index: 1;
+        max-width: 75%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 0 25px;
+        @include breackpoint(tablet) {
+            max-width: 95%;
+        }
+        .skew-card {
+            animation: fadeInUp;
+            animation-duration: 2s;
+            .card-item {
+                box-shadow: 0px 5px 14px 1px #afacac;
+                transform: translateY(30px);
+                transition: transform .3s linear;
+                &:hover {
+                    transform: translateY(0);
+                    box-shadow: 0 -5px 10px rgba(0, 0, 0, .1);
+                }
+                .card-img {
+                    width: 320px;
+                    height: 276px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+            .card-content {
+                background: white;
+                padding: 24px 32px;
+                p {
+                    font-family: Raleway;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 26px;
+                    color: #000000;
+                    margin-bottom: 16px;
+                    @include breackpoint(desktop) {
+                        font-size: 12px;
+                        line-height: 16px;
+                    }
+                }
+                a {
+                    font-family: Raleway;
+                    font-style: normal;
+                    font-weight: 800;
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: #4BA87D;
+                    text-decoration: none;
+                    @include breackpoint(desktop) {
+                        font-size: 12px;
+                        line-height: 14px;
+                    }
+                    &:hover {
+                        font-weight: 900;
+                        color: rgb(39, 39, 39);
+                    }
+                }
+            }
+            &:nth-child(2) {
+                padding-top: 60px;
+            }
+            &:nth-child(3) {
+                padding-top: 120px;
+                h2 {
+                    font-family: Playfair Display;
+                    font-style: normal;
+                    font-weight: 900;
+                    font-size: 44px;
+                    line-height: 48px;
+                    color: #000000;
+                    margin-bottom: 24px;
+                    @include breackpoint(desktop) {
+                        font-size: 28px;
+                        line-height: 31px;
+                    }
+                }
+                p {
+                    font-family: Raleway;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 19px;
+                    line-height: 26px;
+                    color: #000000;
+                    @include breackpoint(desktop) {
+                        font-size: 12px;
+                        line-height: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* end skew css */
+
+
+/* infor css */
+
+.infor {
+    position: relative;
+    z-index: 1;
+    .infor-main {
+        max-width: 75%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .infor-item {
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+            img {
+                width: 100%;
+                height: 100%;
+                transition: transform .25s, visibility .25s ease-in;
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+            .infor-content {
+                position: absolute;
+                left: 0;
+                bottom: 15%;
+                transform: translate(25%, 0);
+                h6 {
+                    font-family: Raleway;
+                    font-style: normal;
+                    font-weight: 900;
+                    font-size: 34px;
+                    line-height: 40px;
+                    color: #FFFFFF;
+                    margin-bottom: 6px;
+                    @include breackpoint(desktop) {
+                        font-size: 22px;
+                        line-height: 26px;
+                    }
+                }
+                p {
+                    font-family: Raleway;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 19px;
+                    line-height: 22px;
+                    color: #FFFFFF;
+                    @include breackpoint(desktop) {
+                        font-size: 12px;
+                        line-height: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* end infor */
+
+
+/* contact */
+
+.contact-main {
+    max-width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    h3 {
+        font-family: Playfair Display;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 44px;
+        line-height: 48px;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 25px;
+        @include breackpoint(desktop) {
+            font-size: 28px;
+            line-height: 36px;
+        }
+    }
+    .form-contact {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        .email-contact {
+            background: #FFFFFF;
+            border: 1px solid #9F9F9F;
+            box-sizing: border-box;
+            border-radius: 5px;
+            padding: 19px 25px;
+            width: 420px;
+            @include breackpoint(desktop) {
+                width: 275px;
+                padding: 12px 16px;
+            }
+            &::placeholder {
+                font-family: Raleway;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 21px;
+                line-height: 25px;
+                /* identical to box height, or 119% */
+                letter-spacing: 1.05px;
+                color: #000000;
+                @include breackpoint(desktop) {
+                    font-size: 13px;
+                    line-height: 15px;
+                    letter-spacing: 0.65px;
+                }
+            }
+        }
+        .btn-contact {
+            background: #4BA87D;
+            padding: 16px 30px;
+            font-family: Raleway;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 21px;
+            line-height: 25px;
+            text-align: center;
+            letter-spacing: 1.05px;
+            color: #FFFFFF;
+            border: none;
+            margin-left: 27px;
+            text-transform: uppercase;
+            cursor: pointer;
+            @include breackpoint(desktop) {
+                font-size: 13px;
+                line-height: 15px;
+                letter-spacing: 0.65px;
+                padding: 13px 22px;
+                margin-left: 17px;
+            }
+        }
+    }
+    p {
+        font-family: Raleway;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 21px;
+        line-height: 25px;
+        letter-spacing: 1.05px;
+        color: #4BA87D;
+        margin-top: 13px;
+        text-align: left;
+        padding-left: 70px;
+        @include breackpoint(desktop) {
+            font-size: 13px;
+            line-height: 15px;
+            letter-spacing: 0.65px;
+        }
+    }
+}
+
+
+/* end contact */
+
+
+/* brand */
+
+.brand-main {
+    max-width: 60%;
+    margin: 75px auto 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include breackpoint(desktop) {
+        max-width: 85%;
+        margin: 50px auto 95px;
+    }
+    h1 {
+        max-width: 45%;
+        font-family: Playfair Display;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 44px;
+        line-height: 48px;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 50px;
+        @include breackpoint(desktop) {
+            font-size: 28px;
+            line-height: 36px;
+        }
+    }
+    .brand-list {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        a {
+            transition: transform 0.25s, visibility 0.25s ease-in;
+            &:hover {
+                transform: scale(1.2);
+            }
+            img {
+                @include breackpoint(desktop) {
+                    max-width: 80%;
+                }
+            }
+        }
+    }
+}
+
+
+/* end brand */
+
+
+/* plan */
+
+.plan {
+    height: 365px;
+    background: #4BA87D;
+    animation-duration: 1.5s;
+    animation-name: zoomIn;
+    @include breackpoint(desktop) {
+        height: 240px;
+    }
+    .plan-main {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        h1 {
+            font-family: Playfair Display;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 60px;
+            line-height: 80px;
+            text-align: center;
+            color: #FFFFFF;
+            margin-bottom: 70px;
+            @include breackpoint(desktop) {
+                font-size: 42px;
+                line-height: 56px;
+                margin-bottom: 40px;
+            }
+        }
+        .btn-plan {
+            background: white;
+            padding: 19px 30px;
+            font-family: Raleway;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 21px;
+            line-height: 25px;
+            text-align: center;
+            letter-spacing: 1.05px;
+            color: #4BA87D;
+            border: none;
+            cursor: pointer;
+            &:hover {
+                background: wheat;
+                border: 3px solid rgb(77, 75, 75);
+                color: rgb(36, 35, 35);
+                padding: 16px 30px;
+            }
+            @include breackpoint(desktop) {
+                font-size: 13px;
+                line-height: 15px;
+                letter-spacing: 0.65px;
+                padding: 13px 23px;
+                &:hover {
+                    padding: 10px 23px;
+                }
+            }
+        }
+    }
+}
+
+
+/* end plan */
+
+.footer-main {
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 80px;
+    @include breackpoint(desktop) {
+        max-width: 100%;
+        margin-top: 50px;
+    }
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 70px 75px;
+        border-bottom: 2px solid #DBDBDB;
+        @include breackpoint(desktop) {
+            padding: 0 80px 50px;
+            border: none;
+        }
+        .footer-logo {
+            margin-left: 60px;
+            position: relative;
+            a {
+                text-decoration: none;
+                .footer-logo-img {
+                    position: absolute;
+                    right: 50%;
+                    top: 0;
+                    transform: translate(-25%, -20%);
+                    @include breackpoint(desktop) {
+                        transform: translate(-15%, -30%);
+                        max-width: 150%;
+                    }
+                }
+                span {
+                    font-family: Raleway;
+                    font-style: normal;
+                    font-weight: 900;
+                    font-size: 26px;
+                    line-height: 31px;
+                    color: #000000;
+                    @include breackpoint(desktop) {
+                        font-size: 16px;
+                        line-height: 19px;
+                    }
+                }
+            }
+        }
+        .footer-contact {
+            display: flex;
+            justify-content: space-between;
+            .footer-contact-item {
+                display: flex;
+                justify-content: space-between;
+                .footer-contact-link {
+                    margin: 0 23px;
+                    .footer-link-item {
+                        list-style: none;
+                        margin-bottom: 10px;
+                        @include breackpoint(desktop) {
+                            margin-bottom: 8px;
+                        }
+                        a {
+                            text-decoration: none;
+                            font-family: Raleway;
+                            font-style: normal;
+                            font-weight: bold;
+                            font-size: 19px;
+                            line-height: 22px;
+                            color: #000000;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                            @include breackpoint(desktop) {
+                                font-size: 13px;
+                                line-height: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer-call {
+        width: 90%;
+        height: 2px;
+        margin: 0 auto;
+        background: #DBDBDB;
+    }
+    .footer-bottom {
+        padding: 40px 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span {
+            font-family: Raleway;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 18px;
+            color: #000000;
+            @include breackpoint(desktop) {
+                font-size: 10px;
+                line-height: 12px;
+            }
+        }
+    }
+}
