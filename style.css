@@ -254,6 +254,12 @@ header {
   }
 }
 
+@media screen and (max-width: 440px) {
+  .review .review-content h1 {
+    max-width: 86%;
+  }
+}
+
 .review .review-content h3 {
   font-family: Raleway;
   font-style: normal;

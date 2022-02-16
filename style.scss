@@ -177,6 +177,9 @@ header {
                 left: 0;
                 transform: translate(0px, -135%);
             }
+            @include breackpoint(changeitem5) {
+                max-width: 86%;
+            }
         }
         h3 {
             font-family: Raleway;

@@ -35,6 +35,11 @@
             @content;
         }
     }
+    @else if $point==changeitem5 {
+        @media screen and (max-width: 440px) {
+            @content;
+        }
+    }
 }
 
 // @mixin mobile() {
