@@ -15,16 +15,6 @@
             @content;
         }
     }
-    @else if $point==landscape {
-        @media screen and (max-width: 1224px) {
-            @content;
-        }
-    }
-    // @else if $point==landscapedesktop {
-    //     @media screen and (max-width: 1440px) {
-    //         @content;
-    //     }
-    // }
     @else if $point==changeitem1 {
         @media screen and (max-width: 810px) {
             @content;
@@ -35,4 +25,20 @@
             @content;
         }
     }
+    @else if $point==changeitem3 {
+        @media screen and (max-width: 987px) {
+            @content;
+        }
+    }
+    @else if $point==changeitem4 {
+        @media screen and (min-width: 540px) and (max-width: 872px) {
+            @content;
+        }
+    }
 }
+
+// @mixin mobile() {
+//     @media screen and (max-width: 540px) {
+//         @content;
+//     }
+// }
